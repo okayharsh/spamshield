@@ -1,0 +1,16 @@
+type Stats = 
+ record {
+   totalAnalyzed: nat;
+   totalHam: nat;
+   totalSpam: nat;
+ };
+type ClassificationResult = 
+ record {
+   classification: text;
+   confidence: nat;
+   isSpam: bool;
+ };
+service : {
+  classifyMessage: ("text": text) -> (ClassificationResult);
+  getStats: () -> (Stats) query;
+}

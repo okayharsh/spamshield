@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans", sans-serif;
+    --font-body: "General Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.625rem;
+
+    --background: 0.08 0.01 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.12 0.02 240;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.15 0.02 240;
+    --popover-foreground: 0.95 0.01 240;
+
+    --primary: 0.65 0.19 262;
+    --primary-foreground: 0.08 0 0;
+
+    --secondary: 0.18 0.02 240;
+    --secondary-foreground: 0.85 0.02 240;
+    --muted: 0.18 0.02 240;
+    --muted-foreground: 0.55 0.01 240;
+
+    --accent: 0.65 0.23 139;
+    --accent-foreground: 0.08 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.08 0 0;
+
+    --border: 0.22 0.02 240;
+    --input: 0.22 0.02 240;
+    --ring: 0.65 0.19 262;
+
+    --chart-1: 0.65 0.23 139;
+    --chart-2: 0.7 0.22 262;
+    --chart-3: 0.65 0.19 22;
+    --chart-4: 0.75 0.2 120;
+    --chart-5: 0.55 0.15 200;
+
+    --sidebar: 0.12 0.02 240;
+    --sidebar-foreground: 0.93 0.01 240;
+    --sidebar-primary: 0.65 0.19 262;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.18 0.02 240;
+    --sidebar-accent-foreground: 0.85 0.02 240;
+    --sidebar-border: 0.22 0.02 240;
+    --sidebar-ring: 0.65 0.19 262;
+  }
+
+  .dark {
+    --background: 0.08 0.01 240;
+    --foreground: 0.95 0.01 240;
+    --card: 0.12 0.02 240;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.15 0.02 240;
+    --popover-foreground: 0.95 0.01 240;
+
+    --primary: 0.65 0.19 262;
+    --primary-foreground: 0.08 0 0;
+
+    --secondary: 0.18 0.02 240;
+    --secondary-foreground: 0.85 0.02 240;
+    --muted: 0.18 0.02 240;
+    --muted-foreground: 0.55 0.01 240;
+
+    --accent: 0.65 0.23 139;
+    --accent-foreground: 0.08 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.08 0 0;
+
+    --border: 0.22 0.02 240;
+    --input: 0.22 0.02 240;
+    --ring: 0.65 0.19 262;
+
+    --chart-1: 0.65 0.23 139;
+    --chart-2: 0.7 0.22 262;
+    --chart-3: 0.65 0.19 22;
+    --chart-4: 0.75 0.2 120;
+    --chart-5: 0.55 0.15 200;
+
+    --sidebar: 0.12 0.02 240;
+    --sidebar-foreground: 0.93 0.01 240;
+    --sidebar-primary: 0.65 0.19 262;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.18 0.02 240;
+    --sidebar-accent-foreground: 0.85 0.02 240;
+    --sidebar-border: 0.22 0.02 240;
+    --sidebar-ring: 0.65 0.19 262;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: oklch(var(--border));
+  }
+
+  body {
+    background-color: #0a0a12;
+    color: oklch(var(--foreground));
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer utilities {
+  .glow-green {
+    text-shadow: 0 0 8px #39ff14cc, 0 0 20px #39ff1488, 0 0 40px #39ff1444;
+    color: #39ff14;
+  }
+
+  .glow-cyan {
+    text-shadow: 0 0 8px #00d9ffcc, 0 0 20px #00d9ff88, 0 0 40px #00d9ff44;
+    color: #00d9ff;
+  }
+
+  .glow-neon {
+    text-shadow: 0 0 10px oklch(0.65 0.23 139 / 0.8), 0 0 20px
+      oklch(0.65 0.19 262 / 0.6);
+  }
+
+  .border-glow {
+    border: 1px solid oklch(0.65 0.23 139);
+    box-shadow: 0 0 12px oklch(0.65 0.23 139 / 0.4), inset 0 0 12px
+      oklch(0.65 0.23 139 / 0.1);
+  }
+
+  .border-glow-cyan {
+    border: 1px solid oklch(0.7 0.22 262);
+    box-shadow: 0 0 12px oklch(0.7 0.22 262 / 0.4), inset 0 0 12px
+      oklch(0.7 0.22 262 / 0.1);
+  }
+
+  .border-neon-green {
+    border: 1px solid #39ff14;
+    box-shadow: 0 0 10px #39ff1466, inset 0 0 10px #39ff1411;
+  }
+
+  .border-neon-cyan {
+    border: 1px solid #00d9ff;
+    box-shadow: 0 0 10px #00d9ff66, inset 0 0 10px #00d9ff11;
+  }
+
+  .cyber-grid {
+    background-image: linear-gradient(
+        rgba(0, 217, 255, 0.04) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, rgba(0, 217, 255, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(10, 10, 18, 0.85);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.12);
+  }
+
+  .gradient-text-green {
+    background: linear-gradient(135deg, #39ff14, #00d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .threat-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #39ff14;
+    box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff1488;
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+
+  .threat-dot-red {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff3a3a;
+    box-shadow: 0 0 6px #ff3a3aee, 0 0 12px #ff3a3a88;
+    animation: pulse-glow-red 1.5s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .pulse-glow-cyan {
+    animation: pulse-glow-cyan 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 8px #39ff14aa;
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 20px #39ff1466;
+    }
+  }
+
+  @keyframes pulse-glow-cyan {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 8px #00d9ffaa;
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 20px #00d9ff66;
+    }
+  }
+
+  @keyframes pulse-glow-red {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 8px #ff3a3aaa;
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 20px #ff3a3a66;
+    }
+  }
+}

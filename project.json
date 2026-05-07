@@ -1,0 +1,23 @@
+{
+  "overview": "An animated single-page website for SMS spam detection. Features a 3D particle hero, interactive demo where users paste an SMS and get instant spam/ham classification with confidence scores, an animated pipeline diagram explaining how detection works, stats counters, and a dark cybersecurity-themed design with neon green and blue accents.",
+  "features": [
+    "3D particle hero section with cursor-reactive animation",
+    "Interactive SMS classifier with real-time spam/ham results and confidence score",
+    "Animated pipeline diagram showing detection steps",
+    "Scroll-triggered animated stats counters",
+    "Dark cybersecurity theme with neon green and blue accents",
+    "Motoko backend with keyword-heuristic spam classification",
+    "Mobile responsive with accessibility support"
+  ],
+  "category": "showcase",
+  "tags": [
+    "sms",
+    "spam-detection",
+    "animated",
+    "cybersecurity",
+    "three-js",
+    "machine-learning",
+    "showcase"
+  ],
+  "last_updated": "2026-05-07T09:54:21.021Z"
+}
